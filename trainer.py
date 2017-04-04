@@ -7,7 +7,7 @@ import numpy as np
 import os
 from PIL import Image
 
-recognizer = cv2.face.createLBPHFaceRecognizer()
+recognizer = cv2.createLBPHFaceRecognizer()
 
 path = 'dataSet'
 
@@ -20,7 +20,7 @@ def getImagesWithID(path):
             faceNp = np.array(faceImg, 'uint8')
             ID = int(os.path.split(imagePath)[-1].split('.')[1])
             faces.append(faceNp)
-            print(ID)
+            print ID
             IDs.append(ID)
             cv2.imshow('tranging', faceNp)
             cv2.waitKey(10)
